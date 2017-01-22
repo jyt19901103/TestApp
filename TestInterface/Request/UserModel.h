@@ -16,8 +16,11 @@
 @property (nonatomic, copy) NSString *access_token;
 @property (nonatomic, copy) NSDictionary *header;
 @property (nonatomic, copy) NSDictionary *body;
-@property (nonatomic, copy) NSDictionary *api;
-
+@property (nonatomic, copy) NSString *api;
+@property (nonatomic, copy) NSString *isDownload;
+    @property (nonatomic, copy) NSString *upload;
+@property (nonatomic, copy) NSDictionary *result;
+@property (nonatomic, copy) NSError *error;
 
 + (UserModel *)modelWithDict:(NSDictionary *)dict;
 - (instancetype)initWithDict:(NSDictionary *)dict;

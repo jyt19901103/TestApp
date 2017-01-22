@@ -2,7 +2,7 @@
 //  HttpRequest.h
 //  TestInterface
 //
-//  Created by 蒋月婷 on 17/1/10.
+//  Created by 蒋月婷 on 17/1/5.
 //  Copyright © 2017年 JYT. All rights reserved.
 //
 
@@ -28,5 +28,19 @@ typedef enum RequestTypes{
         WithSuccess:(void (^)(id result))success
             failure:(void (^)(NSError *error))failure
          statusCode:(void (^)(NSInteger statusCode))statusCode;
+
++ (void)httpOtherRequest:(NSString *)url
+             RequestType:(NSString *)type
+                  Header:(NSDictionary *)headers
+              Parameters:(NSDictionary *)params
+             WithSuccess:(void (^)(id result))success
+                 failure:(void (^)(NSError *error))failure
+              statusCode:(void (^)(NSInteger statusCode))statusCode;
+
++ (void)uploadFile:(NSString *)url
+            Header:(NSDictionary *)headers
+       WithSuccess:(void (^)(id result))success
+           failure:(void (^)(NSError *error))failure
+        statusCode:(void (^)(NSInteger statusCode))statusCode;
 
 @end

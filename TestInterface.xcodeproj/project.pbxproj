@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE1C11BB1E273C5F00D8E393 /* Untitled.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11BA1E273C5E00D8E393 /* Untitled.json */; };
-		DE1C11BE1E27930200D8E393 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11BD1E27930200D8E393 /* ListModel.m */; };
-		DE1C11C11E288CDC00D8E393 /* TokenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C01E288CDC00D8E393 /* TokenViewController.m */; };
+		DE1C11C41E2CA56800D8E393 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C31E2CA56800D8E393 /* DetailedViewController.m */; };
 		DE67B6ED1E1E262D0071161F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B6EC1E1E262D0071161F /* main.m */; };
 		DE67B6F01E1E262D0071161F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B6EF1E1E262D0071161F /* AppDelegate.m */; };
 		DE67B6F31E1E262D0071161F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B6F21E1E262D0071161F /* ViewController.m */; };
@@ -17,7 +16,6 @@
 		DE67B6F81E1E262D0071161F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE67B6F71E1E262D0071161F /* Assets.xcassets */; };
 		DE67B6FB1E1E262D0071161F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE67B6F91E1E262D0071161F /* LaunchScreen.storyboard */; };
 		DE67B7161E1E26900071161F /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B70A1E1E26900071161F /* UsersViewController.m */; };
-		DE67B7171E1E26900071161F /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B70D1E1E26900071161F /* ChatViewController.m */; };
 		DE67B7181E1E26900071161F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B70F1E1E26900071161F /* MainViewController.m */; };
 		DE67B72F1E1E27E50071161F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B71D1E1E27E50071161F /* AFHTTPRequestOperation.m */; };
 		DE67B7301E1E27E50071161F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B71F1E1E27E50071161F /* AFHTTPRequestOperationManager.m */; };
@@ -28,7 +26,6 @@
 		DE67B7351E1E27E50071161F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B72A1E1E27E50071161F /* AFURLRequestSerialization.m */; };
 		DE67B7361E1E27E50071161F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B72C1E1E27E50071161F /* AFURLResponseSerialization.m */; };
 		DE67B7371E1E27E50071161F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B72E1E1E27E50071161F /* AFURLSessionManager.m */; };
-		DE67B73C1E1E37FD0071161F /* HttpsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B73B1E1E37FD0071161F /* HttpsManager.m */; };
 		DE67B7881E2487060071161F /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B7871E2487060071161F /* HttpRequest.m */; };
 		DE7CEC9D1E249531007ABB4A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7CEC9C1E249531007ABB4A /* UserModel.m */; };
 		DEBB2AFF1E24D8AB00EC7391 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBB2AFE1E24D8AB00EC7391 /* ListCell.m */; };
@@ -36,10 +33,8 @@
 
 /* Begin PBXFileReference section */
 		DE1C11BA1E273C5E00D8E393 /* Untitled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Untitled.json; sourceTree = "<group>"; };
-		DE1C11BC1E27930200D8E393 /* ListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
-		DE1C11BD1E27930200D8E393 /* ListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
-		DE1C11BF1E288CDC00D8E393 /* TokenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenViewController.h; sourceTree = "<group>"; };
-		DE1C11C01E288CDC00D8E393 /* TokenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenViewController.m; sourceTree = "<group>"; };
+		DE1C11C21E2CA56800D8E393 /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailedViewController.h; path = ../Chat/DetailedViewController.h; sourceTree = "<group>"; };
+		DE1C11C31E2CA56800D8E393 /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailedViewController.m; path = ../Chat/DetailedViewController.m; sourceTree = "<group>"; };
 		DE67B6E81E1E262D0071161F /* TestInterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestInterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE67B6EC1E1E262D0071161F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE67B6EE1E1E262D0071161F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,8 +47,6 @@
 		DE67B6FC1E1E262D0071161F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE67B7091E1E26900071161F /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
 		DE67B70A1E1E26900071161F /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
-		DE67B70C1E1E26900071161F /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		DE67B70D1E1E26900071161F /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		DE67B70E1E1E26900071161F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		DE67B70F1E1E26900071161F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		DE67B71C1E1E27E50071161F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -77,8 +70,6 @@
 		DE67B72E1E1E27E50071161F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		DE67B7381E1E28810071161F /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		DE67B7391E1E28A60071161F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		DE67B73A1E1E37FD0071161F /* HttpsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpsManager.h; sourceTree = "<group>"; };
-		DE67B73B1E1E37FD0071161F /* HttpsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpsManager.m; sourceTree = "<group>"; };
 		DE67B7861E2487060071161F /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
 		DE67B7871E2487060071161F /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
 		DE7CEC9B1E249531007ABB4A /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -104,7 +95,6 @@
 				DE1C11BA1E273C5E00D8E393 /* Untitled.json */,
 				DE67B71A1E1E27E50071161F /* Libs */,
 				DE67B7021E1E26900071161F /* BuddyList */,
-				DE67B70B1E1E26900071161F /* Chat */,
 				DE67B7101E1E26900071161F /* Request */,
 				DE67B6EA1E1E262D0071161F /* TestInterface */,
 				DE67B6E91E1E262D0071161F /* Products */,
@@ -150,6 +140,8 @@
 		DE67B7021E1E26900071161F /* BuddyList */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C11C21E2CA56800D8E393 /* DetailedViewController.h */,
+				DE1C11C31E2CA56800D8E393 /* DetailedViewController.m */,
 				DE67B7091E1E26900071161F /* UsersViewController.h */,
 				DE67B70A1E1E26900071161F /* UsersViewController.m */,
 			);
@@ -157,27 +149,11 @@
 			path = TestInterface/BuddyList;
 			sourceTree = "<group>";
 		};
-		DE67B70B1E1E26900071161F /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				DE67B70C1E1E26900071161F /* ChatViewController.h */,
-				DE67B70D1E1E26900071161F /* ChatViewController.m */,
-				DE1C11BF1E288CDC00D8E393 /* TokenViewController.h */,
-				DE1C11C01E288CDC00D8E393 /* TokenViewController.m */,
-			);
-			name = Chat;
-			path = TestInterface/Chat;
-			sourceTree = "<group>";
-		};
 		DE67B7101E1E26900071161F /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				DE67B73A1E1E37FD0071161F /* HttpsManager.h */,
-				DE67B73B1E1E37FD0071161F /* HttpsManager.m */,
 				DE67B7861E2487060071161F /* HttpRequest.h */,
 				DE67B7871E2487060071161F /* HttpRequest.m */,
-				DE1C11BC1E27930200D8E393 /* ListModel.h */,
-				DE1C11BD1E27930200D8E393 /* ListModel.m */,
 				DE7CEC9B1E249531007ABB4A /* UserModel.h */,
 				DE7CEC9C1E249531007ABB4A /* UserModel.m */,
 				DEBB2AFD1E24D8AB00EC7391 /* ListCell.h */,
@@ -307,13 +283,10 @@
 				DE67B7181E1E26900071161F /* MainViewController.m in Sources */,
 				DE67B7371E1E27E50071161F /* AFURLSessionManager.m in Sources */,
 				DE67B7361E1E27E50071161F /* AFURLResponseSerialization.m in Sources */,
-				DE1C11BE1E27930200D8E393 /* ListModel.m in Sources */,
-				DE1C11C11E288CDC00D8E393 /* TokenViewController.m in Sources */,
-				DE67B7171E1E26900071161F /* ChatViewController.m in Sources */,
 				DE67B7881E2487060071161F /* HttpRequest.m in Sources */,
 				DE67B7351E1E27E50071161F /* AFURLRequestSerialization.m in Sources */,
+				DE1C11C41E2CA56800D8E393 /* DetailedViewController.m in Sources */,
 				DE67B7321E1E27E50071161F /* AFNetworkReachabilityManager.m in Sources */,
-				DE67B73C1E1E37FD0071161F /* HttpsManager.m in Sources */,
 				DE67B72F1E1E27E50071161F /* AFHTTPRequestOperation.m in Sources */,
 				DE67B7311E1E27E50071161F /* AFHTTPSessionManager.m in Sources */,
 			);
@@ -362,6 +335,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -381,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -409,6 +383,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -422,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -433,12 +408,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 499WYUV8Q2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TestInterface/PrefixHeader.pch";
 				INFOPLIST_FILE = TestInterface/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JYT.TestInterface;
+				PRODUCT_BUNDLE_IDENTIFIER = com.easemob.enterprise.demo.ui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -447,12 +423,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 499WYUV8Q2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TestInterface/PrefixHeader.pch";
 				INFOPLIST_FILE = TestInterface/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JYT.TestInterface;
+				PRODUCT_BUNDLE_IDENTIFIER = com.easemob.enterprise.demo.ui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

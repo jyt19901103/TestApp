@@ -13,33 +13,12 @@
 
 #define KiOS [[[UIDevice currentDevice]systemVersion] floatValue]
 
-#define AppKey @"shishijiadexiaoermei/testapp"
-
-#define BaseUrl @"https://a1.easemob.com/"
-#define URLSTRING [NSString stringWithFormat:@"%@%@/",BaseUrl,AppKey]
-//user
-#define TokenURL [NSString stringWithFormat:@"%@token",URLSTRING]  //获取token接口
-
-#define UsersURL [NSString stringWithFormat:@"%@users",URLSTRING]  //注册好友接口(参数单个批量自定)
-#define GetUsersURL [NSString stringWithFormat:@"%@users?limit=100",URLSTRING]  //获取批量好友接口
-#define GetFriendListURL [NSString stringWithFormat:@"%@users/u3/contacts/users",URLSTRING]  //获取好友列表接口
-#define DeleteUserURL [NSString stringWithFormat:@"%@users/a1",URLSTRING]      //删除用户接口(单个)/修改昵称接口
-
-#define PUTPasswordURL [NSString stringWithFormat:@"%@users/b1/password",URLSTRING]      //重置IM用户密码
-#define AddFriendURL [NSString stringWithFormat:@"%@users/u3/contacts/users/b1",URLSTRING]//
-#define GetFriendListURL [NSString stringWithFormat:@"%@users/u3/contacts/users",URLSTRING]//
-#define GetUserBlacklistURL [NSString stringWithFormat:@"%@users/u3/blocks/users",URLSTRING]//获取用户黑名单
-#define GetUserBlackURL [NSString stringWithFormat:@"%@users/u3/blocks/users/u7",URLSTRING]// 加和删除略过)
-#define CheckOnlineStatusURL [NSString stringWithFormat:@"%@users/u3/status",URLSTRING]
-#define OFFLineMsgCountURL [NSString stringWithFormat:@"%@users/u3/offline_msg_count",URLSTRING]
-#define DeactivateUserURL [NSString stringWithFormat:@"%@users/b3/deactivate",URLSTRING]
-#define ActivateUserURL [NSString stringWithFormat:@"%@users/b3/activate",URLSTRING]
-#define DisconnectUserURL [NSString stringWithFormat:@"%@users/80011/disconnect",URLSTRING]
-
-#define MessagesURL [NSString stringWithFormat:@"%@messages",URLSTRING]
 
 
+#define GetDNSURL @"https://rs.easemob.com/easemob/server.json?app_key=easemob-demo%23chatdemoui"
 
 #define TOKEN [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
+#define URLSTRING [[NSUserDefaults standardUserDefaults] objectForKey:@"URLSTRING"]
+
 
 #endif

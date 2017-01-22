@@ -44,7 +44,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 220, 20)];
+        _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 230, 20)];
         _statusLabel = [[UILabel alloc]initWithFrame:CGRectMake(SCREENWIDTH - 90, 10, 60, 20)];
         _statusLabel.textAlignment = NSTextAlignmentRight;
 

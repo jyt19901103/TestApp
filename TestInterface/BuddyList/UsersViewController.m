@@ -7,11 +7,11 @@
 //
 
 #import "UsersViewController.h"
-#import "HttpsManager.h"
 #import "UserModel.h"
 #import "ListCell.h"
 #import "UserModel.h"
 #import "HttpRequest.h"
+#import "DetailedViewController.h"
 
 @interface UsersViewController ()
 @property (strong, nonatomic) UITableView *tableView;
@@ -24,7 +24,8 @@
 @property (copy, nonatomic) NSDictionary *result;
 @property (copy, nonatomic) NSString *stausCode;
 @property (strong, nonatomic) UserModel *model;
-
+@property (strong, nonatomic) UIView *footerView;
+@property (copy, nonatomic) NSString *url;
 
 @end
 
@@ -34,53 +35,19 @@
     [super viewDidLoad];
     
 //    [self setUpSubviews];
-
+    self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"开始" style:UIBarButtonItemStylePlain target:self action:@selector(onBtmClick:)];
     
 }
 
-- (void)analysisData:(NSArray *)data
+- (void)analysisData
 {
-    if (_dataSource == nil) {
-        _dataSource = [[NSMutableArray alloc]init];
-        for (NSDictionary *dict in self.datArray) {
-            UserModel *requestmodel = [UserModel modelWithDict:dict];
-            if (requestmodel.header == NULL) {
-                requestmodel.header = nil;
-            }
-            if (requestmodel.body == NULL) {
-                requestmodel.body = nil;
-            }
-            NSString *url = [NSString stringWithFormat:@"%@%@",URLSTRING,requestmodel.api];
-            [HttpRequest httpRequest:url RequestType:requestmodel.method Header:requestmodel.header Parameters:requestmodel.body WithSuccess:^(id result) {
-                NSLog(@"%@",result);
-                
-            } failure:^(NSError *error) {
-                if (error) {
-                    NSLog(@"error: %@",error);
-                    }
-            } statusCode:^(NSInteger statusCode) {
-                NSLog(@"statusCode: %ld",statusCode);
-                requestmodel.staus = [NSString stringWithFormat:@"%ld", statusCode];
-                [self createTableView];
-            }];
-            [_dataSource addObject:requestmodel];
-        }
-        [_tableView reloadData];
-
-    }
-    [_tableView reloadData];
-
 }
 
 
 - (void)createTableView
 {
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT)];
-    
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
+
 }
 
 #pragma mark - 数据源
@@ -92,10 +59,7 @@
 {
     ListCell *cell = [ListCell cellWithTableView:tableView];
     cell.userModel = _dataSource[indexPath.row];
-//    cell.nameLabel.text  = _dataSource[indexPath.row];
-//    cell.statusLabel.text = _stausCode;
-    
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -112,32 +76,19 @@
 - (void)onBtmClick:(UIButton *)button{
     if (_dataSource != nil) {
         [_dataSource removeAllObjects];
+//        [_tableView removeFromSuperview];
     }
-    [self analysisData:self.datArray];
+    [self analysisData];
 //    [self createTableView];
 }
-- (void)requestData{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailedViewController *dvc = [[DetailedViewController alloc]init];
+    dvc.dataDict = [_dataSource[indexPath.row] result];
     
-    for (NSDictionary *dict in self.datArray) {
-        UserModel *requestmodel = [UserModel modelWithDict:dict];
-        if (requestmodel.header == NULL) {
-            requestmodel.header = nil;
-        }
-        if (requestmodel.body == NULL) {
-            requestmodel.body = nil;
-        }
-        NSString *url = [NSString stringWithFormat:@"%@%@",URLSTRING,requestmodel.api];
-        [HttpRequest httpRequest:url RequestType:requestmodel.method Header:requestmodel.header Parameters:requestmodel.body WithSuccess:^(id result) {
-            NSLog(@"%@",result);
-        } failure:^(NSError *error) {
-            if (error) {
-                NSLog(@"error: %@",error);
-            }
-        }];
-    }
-
-
+    //推出vc
+    [self.navigationController pushViewController:dvc animated:YES];
+    
 }
-
 
 @end
