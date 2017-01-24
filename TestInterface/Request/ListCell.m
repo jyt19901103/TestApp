@@ -36,7 +36,13 @@
 - (void)setUserModel:(UserModel *)userModel{
     _userModel = userModel;
     _nameLabel.text = [NSString stringWithFormat:@"%@",userModel.name];
-    _statusLabel.text = [NSString stringWithFormat:@"%@",userModel.staus];
+    if (userModel.staus == NULL) {
+        _statusLabel.text = @"";
+
+    }else{
+        _statusLabel.text = [NSString stringWithFormat:@"%@",userModel.staus];
+
+    }
     
 }
 

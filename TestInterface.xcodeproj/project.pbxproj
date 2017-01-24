@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE1C11BB1E273C5F00D8E393 /* Untitled.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11BA1E273C5E00D8E393 /* Untitled.json */; };
 		DE1C11C41E2CA56800D8E393 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C31E2CA56800D8E393 /* DetailedViewController.m */; };
+		DE3CEEE11E34C7D90048BB86 /* rest.json in Resources */ = {isa = PBXBuildFile; fileRef = DE3CEEE01E34C7D90048BB86 /* rest.json */; };
 		DE67B6ED1E1E262D0071161F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B6EC1E1E262D0071161F /* main.m */; };
 		DE67B6F01E1E262D0071161F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B6EF1E1E262D0071161F /* AppDelegate.m */; };
 		DE67B6F31E1E262D0071161F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B6F21E1E262D0071161F /* ViewController.m */; };
@@ -32,9 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DE1C11BA1E273C5E00D8E393 /* Untitled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Untitled.json; sourceTree = "<group>"; };
+		DE1C11BA1E273C5E00D8E393 /* Untitled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Untitled.json; path = ../../Untitled.json; sourceTree = "<group>"; };
 		DE1C11C21E2CA56800D8E393 /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailedViewController.h; path = ../Chat/DetailedViewController.h; sourceTree = "<group>"; };
 		DE1C11C31E2CA56800D8E393 /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailedViewController.m; path = ../Chat/DetailedViewController.m; sourceTree = "<group>"; };
+		DE3CEEE01E34C7D90048BB86 /* rest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rest.json; sourceTree = "<group>"; };
 		DE67B6E81E1E262D0071161F /* TestInterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestInterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE67B6EC1E1E262D0071161F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE67B6EE1E1E262D0071161F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,8 +49,8 @@
 		DE67B6FC1E1E262D0071161F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE67B7091E1E26900071161F /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
 		DE67B70A1E1E26900071161F /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
-		DE67B70E1E1E26900071161F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		DE67B70F1E1E26900071161F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		DE67B70E1E1E26900071161F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
+		DE67B70F1E1E26900071161F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		DE67B71C1E1E27E50071161F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		DE67B71D1E1E27E50071161F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		DE67B71E1E1E27E50071161F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -72,10 +74,10 @@
 		DE67B7391E1E28A60071161F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DE67B7861E2487060071161F /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
 		DE67B7871E2487060071161F /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
-		DE7CEC9B1E249531007ABB4A /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
-		DE7CEC9C1E249531007ABB4A /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		DEBB2AFD1E24D8AB00EC7391 /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
-		DEBB2AFE1E24D8AB00EC7391 /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
+		DE7CEC9B1E249531007ABB4A /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserModel.h; path = ../Request/UserModel.h; sourceTree = "<group>"; };
+		DE7CEC9C1E249531007ABB4A /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserModel.m; path = ../Request/UserModel.m; sourceTree = "<group>"; };
+		DEBB2AFD1E24D8AB00EC7391 /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListCell.h; path = ../Request/ListCell.h; sourceTree = "<group>"; };
+		DEBB2AFE1E24D8AB00EC7391 /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListCell.m; path = ../Request/ListCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +94,6 @@
 		DE67B6DF1E1E262C0071161F = {
 			isa = PBXGroup;
 			children = (
-				DE1C11BA1E273C5E00D8E393 /* Untitled.json */,
 				DE67B71A1E1E27E50071161F /* Libs */,
 				DE67B7021E1E26900071161F /* BuddyList */,
 				DE67B7101E1E26900071161F /* Request */,
@@ -112,8 +113,6 @@
 		DE67B6EA1E1E262D0071161F /* TestInterface */ = {
 			isa = PBXGroup;
 			children = (
-				DE67B70E1E1E26900071161F /* MainViewController.h */,
-				DE67B70F1E1E26900071161F /* MainViewController.m */,
 				DE67B6EE1E1E262D0071161F /* AppDelegate.h */,
 				DE67B6EF1E1E262D0071161F /* AppDelegate.m */,
 				DE67B6F11E1E262D0071161F /* ViewController.h */,
@@ -144,6 +143,12 @@
 				DE1C11C31E2CA56800D8E393 /* DetailedViewController.m */,
 				DE67B7091E1E26900071161F /* UsersViewController.h */,
 				DE67B70A1E1E26900071161F /* UsersViewController.m */,
+				DE7CEC9B1E249531007ABB4A /* UserModel.h */,
+				DE7CEC9C1E249531007ABB4A /* UserModel.m */,
+				DEBB2AFD1E24D8AB00EC7391 /* ListCell.h */,
+				DEBB2AFE1E24D8AB00EC7391 /* ListCell.m */,
+				DE67B70E1E1E26900071161F /* MainViewController.h */,
+				DE67B70F1E1E26900071161F /* MainViewController.m */,
 			);
 			name = BuddyList;
 			path = TestInterface/BuddyList;
@@ -154,10 +159,6 @@
 			children = (
 				DE67B7861E2487060071161F /* HttpRequest.h */,
 				DE67B7871E2487060071161F /* HttpRequest.m */,
-				DE7CEC9B1E249531007ABB4A /* UserModel.h */,
-				DE7CEC9C1E249531007ABB4A /* UserModel.m */,
-				DEBB2AFD1E24D8AB00EC7391 /* ListCell.h */,
-				DEBB2AFE1E24D8AB00EC7391 /* ListCell.m */,
 			);
 			name = Request;
 			path = TestInterface/Request;
@@ -166,6 +167,8 @@
 		DE67B71A1E1E27E50071161F /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				DE3CEEE01E34C7D90048BB86 /* rest.json */,
+				DE1C11BA1E273C5E00D8E393 /* Untitled.json */,
 				DE67B71B1E1E27E50071161F /* AFNetworking */,
 			);
 			name = Libs;
@@ -261,6 +264,7 @@
 				DE67B6F81E1E262D0071161F /* Assets.xcassets in Resources */,
 				DE1C11BB1E273C5F00D8E393 /* Untitled.json in Resources */,
 				DE67B6F61E1E262D0071161F /* Main.storyboard in Resources */,
+				DE3CEEE11E34C7D90048BB86 /* rest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
