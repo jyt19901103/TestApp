@@ -47,7 +47,7 @@
                        "nickname": "测试账户2"
                        },
                        {
-                       "username": "u1",
+                       "username": "u3",
                        "password": "1",
                        "nickname": "测试账户3"
                        },
@@ -493,7 +493,6 @@
                             "u6",
                             "u7",
                             "u8",
-
                             ]
               }
               },
