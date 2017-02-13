@@ -19,7 +19,12 @@ typedef enum RequestTypes{
 }RequestType;
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 
-+ (void)httpRequest:(NSString *)url RequestType:(NSString *)type Header:(NSDictionary *)headers Parameters:(NSDictionary *)params  WithSuccess:(void (^)(id result))success failure:(void (^)(NSError *error))failure;
++ (void)httpRequest:(NSString *)url
+        RequestType:(NSString *)type
+             Header:(NSDictionary *)headers
+         Parameters:(NSDictionary *)params
+        WithSuccess:(void (^)(id result))success
+            failure:(void (^)(NSError *error))failure;
 
 + (void)httpRequest:(NSString *)url
         RequestType:(NSString *)type

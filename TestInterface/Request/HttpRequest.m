@@ -17,7 +17,7 @@
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer]; // 上传JSON格式
-        // 声明获取到的数据格式
+    // 声明获取到的数据格式
     manager.responseSerializer = [AFJSONResponseSerializer serializer]; // AFN会JSON解析返回的数据
     [manager.requestSerializer setValue:TOKEN forHTTPHeaderField:@"Authorization"];
     
@@ -28,7 +28,7 @@
         RequestType:(NSString *)type
              Header:(NSDictionary *)headers
          Parameters:(NSDictionary *)params
-        WithSuccess:(void (^)(id result))success 
+        WithSuccess:(void (^)(id result))success
             failure:(void (^)(NSError *error))failure
          statusCode:(void (^)(NSInteger statusCode))statusCode{
     
@@ -36,19 +36,24 @@
     for (NSString *key in [headers allKeys]) {
         [manager.requestSerializer setValue:[headers valueForKey:key] forHTTPHeaderField:key];
     }
-    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:type URLString:url parameters:params error:nil];
+    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:type
+                                                                      URLString:url
+                                                                     parameters:params
+                                                                          error:nil];
     
-    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-        NSHTTPURLResponse * responses = (NSHTTPURLResponse *)response;
-        statusCode(responses.statusCode);
-        if (success) {
-            success(responseObject);
-        }
-        if (failure) {
-            failure(error);
-
-        }
-    }];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request
+                                                completionHandler:
+                                      ^(NSURLResponse *response, id responseObject, NSError *error) {
+                                          NSHTTPURLResponse * responses = (NSHTTPURLResponse *)response;
+                                          statusCode(responses.statusCode);
+                                          if (success) {
+                                              success(responseObject);
+                                          }
+                                          if (failure) {
+                                              failure(error);
+                                              
+                                          }
+                                      }];
     [dataTask resume];
 }
 
@@ -101,12 +106,12 @@
                                                          nil];
     UIImage *image = [UIImage imageNamed:@"1.jpg"];
     NSData *imageData = UIImageJPEGRepresentation(image, 0.001);
-
+    
     [manager POST:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         // 上传文件
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//        formatter.dateFormat            = @"yyyyMMddHHmmss";
-//        NSString *str                         = [formatter stringFromDate:[NSDate date]];
+        //        formatter.dateFormat            = @"yyyyMMddHHmmss";
+        //        NSString *str                         = [formatter stringFromDate:[NSDate date]];
         NSString *fileName               = [NSString stringWithFormat:@"%@", image];
         
         //imageData 是要上传文件的二进制数据
@@ -119,7 +124,7 @@
         if (success) {
             NSHTTPURLResponse * responses = (NSHTTPURLResponse *)task.response;
             statusCode(responses.statusCode);
-
+            
             success(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -133,7 +138,7 @@
     }];
     
     
-
+    
 }
 
 + (void)httpOtherRequest:(NSString *)url
@@ -143,29 +148,29 @@
              WithSuccess:(void (^)(id result))success
                  failure:(void (^)(NSError *error))failure
               statusCode:(void (^)(NSInteger statusCode))statusCode{
-        //    NSLog(@"url为   %@",url);
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        manager.responseSerializer = [AFJSONResponseSerializer serializer];
-        for (NSString *key in [headers allKeys]) {
-            [manager.requestSerializer setValue:[headers valueForKey:key] forHTTPHeaderField:key];
-        }
-        [manager POST:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-            if (success) {
-                NSHTTPURLResponse * responses = (NSHTTPURLResponse *)task.response;
-                statusCode(responses.statusCode);
-                success(responseObject);
-            }
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            if (failure) {
-                NSHTTPURLResponse * responses = (NSHTTPURLResponse *)task.response;
-                statusCode(responses.statusCode);
-                failure(error);
-            }
-        }];
-        
+    //    NSLog(@"url为   %@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    for (NSString *key in [headers allKeys]) {
+        [manager.requestSerializer setValue:[headers valueForKey:key] forHTTPHeaderField:key];
     }
+    [manager POST:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        if (success) {
+            NSHTTPURLResponse * responses = (NSHTTPURLResponse *)task.response;
+            statusCode(responses.statusCode);
+            success(responseObject);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            NSHTTPURLResponse * responses = (NSHTTPURLResponse *)task.response;
+            statusCode(responses.statusCode);
+            failure(error);
+        }
+    }];
+    
+}
 
 - (void)AFNetworkStatus{
     
