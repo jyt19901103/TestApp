@@ -21,7 +21,7 @@
 }
 
 - (void)setUpSubview{
-    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) ];
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - 67) ];
     textView.delegate = self;
     textView.contentInset = UIEdgeInsetsMake(10, 10, 0, 0);
     textView.showsHorizontalScrollIndicator = NO;

@@ -117,17 +117,17 @@
             _restModel.result = responseObject;
             NSDictionary *restDict = responseObject[@"rest"];
             NSArray *array = restDict[@"hosts"];
-#warning todo 从从获取拼接url地址
-//            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//            
-////            for (NSDictionary *dict in array) {
-//                NSString *resturl = dict[@"domain"];
-//                _app_name = _resultData[@"app_name"];
-//                _org_name = _resultData[@"org_name"];
-//                NSString *urlStr = [NSString stringWithFormat:@"https://%@/%@/%@/",resturl,_org_name,_app_name];
-//                [defaults setObject:urlStr forKey:@"URLSTRING"];
-//                [defaults synchronize];
-//            }
+            
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            for (NSDictionary *dict in array) {
+                NSString *resturl = dict[@"domain"] ;
+                NSLog(@"resturl:%@",resturl);
+                _app_name = _resultData[@"app_name"];
+                _org_name = _resultData[@"org_name"];
+                NSString *urlStr = [NSString stringWithFormat:@"https://%@/%@/%@/",resturl,_org_name,_app_name];
+                [defaults setObject:urlStr forKey:@"URLSTRING"];
+                [defaults synchronize];
+            }
             
             NSHTTPURLResponse * responses = (NSHTTPURLResponse *)task.response;
             _restModel.staus = [NSString stringWithFormat:@"%ld", responses.statusCode] ;
@@ -150,29 +150,12 @@
 }
 
 - (void)requestTokenData{
-    _app_name = _resultData[@"app_name"];
-    _org_name = _resultData[@"org_name"];
-    _rest_url = _resultData[@"rest_url"];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@/%@/",_rest_url,_org_name,_app_name];
-    [defaults setObject:urlStr forKey:@"URLSTRING"];
-    [defaults synchronize];
-    
-    
+
     NSDictionary *tokenDict = _resultData[@"Token"];
     _restModel = [UserModel modelWithDict:tokenDict];
-    if (_restModel.body != nil) {
-        _requestBody  = [tokenDict objectForKey:@"body"];
-    }else{
-        _requestBody = nil;
-    }
-    
-    if (_restModel.header != nil) {
-        _requestHeader  = [tokenDict objectForKey:@"header"];
-    }else{
-        _requestHeader = nil;
-    }
+
     _url = [NSString stringWithFormat:@"%@%@",URLSTRING,_restModel.api];
+    NSLog(@"1111111111111111%@",_url);
     [HttpRequest httpOtherRequest:_url  RequestType:_restModel.method Header:_restModel.header Parameters:_restModel.body WithSuccess:^(id result) {
         NSString *tokenString = [result objectForKey:@"access_token"];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -183,12 +166,16 @@
         [_tableView reloadData];
         // 创建队列
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-        // 创建3个操作
+        // 创建操作
         NSOperation *a = [NSBlockOperation blockOperationWithBlock:^{
-            [self requestUsersData];
+            NSArray *userArray = _resultData[@"Users"];
+
+            [self requestUsersData:userArray];
         }];
         NSOperation *b = [NSBlockOperation blockOperationWithBlock:^{
-            [self requestAfterData];
+            NSArray *afterArray = _resultData[@"After"];
+
+            [self requestUsersData:afterArray];
         }];
         [b addDependency:a];
         [queue addOperation:a];
@@ -203,8 +190,7 @@
         _restModel.staus = [NSString stringWithFormat:@"%ld", statusCode];
     }];
 }
-- (void)requestUsersData{
-    NSArray *userArray = _resultData[@"Users"];
+- (void)requestUsersData:(NSArray *)userArray{
     for (NSDictionary *dict in userArray) {
         UserModel *listModel = [UserModel modelWithDict:dict];
 
@@ -241,44 +227,6 @@
         }];
         [_dataSource addObject:listModel];
 
-    }
-    
-    [self.tableView reloadData];
-}
-- (void)requestAfterData{
-    NSArray *userArray = _resultData[@"After"];
-    for (NSDictionary *dict in userArray) {
-        UserModel *listModel = [UserModel modelWithDict:dict];
-        
-
-        _url = [NSString stringWithFormat:@"%@%@",URLSTRING,listModel.api];
-        
-        if (listModel.body != nil) {
-            _requestBody  = [dict objectForKey:@"body"];
-        }else{
-            _requestBody = nil;
-        }
-        
-        if (listModel.header != nil) {
-            _requestHeader  = [dict objectForKey:@"header"];
-        }else{
-            _requestHeader = nil;
-        }
-        
-        [HttpRequest httpRequest:_url RequestType:listModel.method Header:_requestHeader Parameters:_requestBody WithSuccess:^(id result) {
-            listModel.result = result;
-        } failure:^(NSError *error) {
-            if (error) {
-                NSLog(@"error: %@",error);
-                listModel.error = error;
-            }
-        } statusCode:^(NSInteger statusCode) {
-            listModel.staus = [NSString stringWithFormat:@"%ld", statusCode];
-            [self.tableView reloadData];
-            
-        }];
-        [_dataSource addObject:listModel];
-        
     }
     
     [self.tableView reloadData];

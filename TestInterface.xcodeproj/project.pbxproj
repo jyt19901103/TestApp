@@ -16,7 +16,6 @@
 		DE67B6F61E1E262D0071161F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE67B6F41E1E262D0071161F /* Main.storyboard */; };
 		DE67B6F81E1E262D0071161F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE67B6F71E1E262D0071161F /* Assets.xcassets */; };
 		DE67B6FB1E1E262D0071161F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE67B6F91E1E262D0071161F /* LaunchScreen.storyboard */; };
-		DE67B7161E1E26900071161F /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B70A1E1E26900071161F /* UsersViewController.m */; };
 		DE67B7181E1E26900071161F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B70F1E1E26900071161F /* MainViewController.m */; };
 		DE67B72F1E1E27E50071161F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B71D1E1E27E50071161F /* AFHTTPRequestOperation.m */; };
 		DE67B7301E1E27E50071161F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B71F1E1E27E50071161F /* AFHTTPRequestOperationManager.m */; };
@@ -47,8 +46,6 @@
 		DE67B6F71E1E262D0071161F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE67B6FA1E1E262D0071161F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE67B6FC1E1E262D0071161F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE67B7091E1E26900071161F /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
-		DE67B70A1E1E26900071161F /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
 		DE67B70E1E1E26900071161F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
 		DE67B70F1E1E26900071161F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		DE67B71C1E1E27E50071161F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -141,8 +138,6 @@
 			children = (
 				DE1C11C21E2CA56800D8E393 /* DetailedViewController.h */,
 				DE1C11C31E2CA56800D8E393 /* DetailedViewController.m */,
-				DE67B7091E1E26900071161F /* UsersViewController.h */,
-				DE67B70A1E1E26900071161F /* UsersViewController.m */,
 				DE7CEC9B1E249531007ABB4A /* UserModel.h */,
 				DE7CEC9C1E249531007ABB4A /* UserModel.m */,
 				DEBB2AFD1E24D8AB00EC7391 /* ListCell.h */,
@@ -276,7 +271,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE67B7341E1E27E50071161F /* AFURLConnectionOperation.m in Sources */,
-				DE67B7161E1E26900071161F /* UsersViewController.m in Sources */,
 				DE67B7331E1E27E50071161F /* AFSecurityPolicy.m in Sources */,
 				DE67B6F31E1E262D0071161F /* ViewController.m in Sources */,
 				DE67B7301E1E27E50071161F /* AFHTTPRequestOperationManager.m in Sources */,
