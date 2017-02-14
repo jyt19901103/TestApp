@@ -21,9 +21,8 @@
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         
         for (NSString *key in [aHeaders allKeys]) {
-            [manager.requestSerializer
-             setValue:[aHeaders valueForKey:key]
-             forHTTPHeaderField:key];
+            [manager.requestSerializer setValue:[aHeaders valueForKey:key]
+                             forHTTPHeaderField:key];
         }
         
         NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:aMethod

@@ -11,7 +11,6 @@
 
 @implementation HttpRequest
 
-
 #pragma mark - 创建请求者
 + (AFHTTPSessionManager *)manager
 {
