@@ -10,5 +10,5 @@
 
 @interface JsonRWManager : NSObject
 + (void)readJsonObjectsWithPath:(NSString *)aPath;
-+ (void)writhJsonObjectsToPath:(NSString *)aPath;
++ (void)writeJsonObjectsToPath:(NSString *)aPath;
 @end

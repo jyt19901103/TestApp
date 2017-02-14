@@ -13,12 +13,7 @@
 
 
 + (void)readJsonObjectsWithPath:(NSString *)aPath{
-    NSString *path = aPath;
-    if (!path) {
-        path = [NSHomeDirectory() stringByAppendingString:@"/test.json"];
-    }
-    
-    NSData *appkeysData = [NSData dataWithContentsOfFile:path];
+    NSData *appkeysData = [NSData dataWithContentsOfFile:aPath];
     NSString *receiveStr = [[NSString alloc] initWithData:appkeysData encoding:NSUTF8StringEncoding];
     receiveStr = [receiveStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     NSData *jsonData = [receiveStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -28,7 +23,7 @@
                                                       error:&err];
 }
 
-+ (void)writhJsonObjectsToPath:(NSString *)aPath{
++ (void)writeJsonObjectsToPath:(NSString *)aPath{
 
 }
 
