@@ -246,7 +246,7 @@
                     
                     for (NSDictionary *dict in result[@"data"]) {
                         // NSLog(@"======%@",dict);
-                        NSString *groupid = dict[@"groupid"];
+                        NSString *groupid = dict[@"groupid"] ;
                         [defaults setObject:groupid forKey:@"GroupId"];
                         [defaults synchronize];
                     }
