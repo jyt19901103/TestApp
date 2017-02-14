@@ -18,19 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
-   
-    MainViewController *rvc = [[MainViewController alloc]init];
     
-    UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:rvc];
-    [nvc.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:20.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
-//    [nvc.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_navigation_bar"] forBarMetrics:UIBarMetricsDefault];
-    [nvc.navigationBar setBackgroundImage:[UIImage imageNamed:@"back"] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-
-    self.window.rootViewController = nvc;
-    [self.window makeKeyAndVisible];
     return YES;
 }
 

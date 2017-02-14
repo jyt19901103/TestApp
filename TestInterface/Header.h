@@ -9,6 +9,8 @@
 #ifndef Header_h
 #define Header_h
 
+#import "UIButton+Category.h"
+
 //判断设备
 #define IS_IPHONE_4 (fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )480) < DBL_EPSILON)
 
