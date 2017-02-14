@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		443AA186A09B4C39246B9C44 /* libPods-TestInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9136EE11CA41D8D175C75993 /* libPods-TestInterface.a */; };
+		90823CE11E52A825006E76DD /* ebs.json in Resources */ = {isa = PBXBuildFile; fileRef = 90823CE01E52A825006E76DD /* ebs.json */; };
+		90823CE41E52B68C006E76DD /* JsonSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90823CE31E52B68C006E76DD /* JsonSelectViewController.m */; };
 		908DA3251E51BFC80064B5F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908DA3241E51BFC80064B5F9 /* MainViewController.m */; };
 		908DA3291E51BFD20064B5F9 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908DA3281E51BFD20064B5F9 /* DetailedViewController.m */; };
 		908DA32E1E51BFEA0064B5F9 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 908DA32B1E51BFEA0064B5F9 /* ListCell.m */; };
@@ -26,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90823CE01E52A825006E76DD /* ebs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ebs.json; sourceTree = "<group>"; };
+		90823CE21E52B68C006E76DD /* JsonSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonSelectViewController.h; sourceTree = "<group>"; };
+		90823CE31E52B68C006E76DD /* JsonSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonSelectViewController.m; sourceTree = "<group>"; };
 		908DA3231E51BFC80064B5F9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		908DA3241E51BFC80064B5F9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		908DA3271E51BFD20064B5F9 /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
@@ -130,6 +135,8 @@
 			children = (
 				908DA35A1E51CD390064B5F9 /* TestTableViewController.h */,
 				908DA35B1E51CD390064B5F9 /* TestTableViewController.m */,
+				90823CE21E52B68C006E76DD /* JsonSelectViewController.h */,
+				90823CE31E52B68C006E76DD /* JsonSelectViewController.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 		DE67B6DF1E1E262C0071161F = {
 			isa = PBXGroup;
 			children = (
+				90823CE01E52A825006E76DD /* ebs.json */,
 				DE67B6EA1E1E262D0071161F /* TestInterface */,
 				DE67B6E91E1E262D0071161F /* Products */,
 				A4D158CA43BCC5FFD153507C /* Pods */,
@@ -273,6 +281,7 @@
 				DE67B6FB1E1E262D0071161F /* LaunchScreen.storyboard in Resources */,
 				DE67B6F81E1E262D0071161F /* Assets.xcassets in Resources */,
 				DE67B6F61E1E262D0071161F /* Main.storyboard in Resources */,
+				90823CE11E52A825006E76DD /* ebs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +347,7 @@
 				DE67B6F01E1E262D0071161F /* AppDelegate.m in Sources */,
 				DE67B6ED1E1E262D0071161F /* main.m in Sources */,
 				908DA3251E51BFC80064B5F9 /* MainViewController.m in Sources */,
+				90823CE41E52B68C006E76DD /* JsonSelectViewController.m in Sources */,
 				908DA3591E51CD130064B5F9 /* BaseTableViewController.m in Sources */,
 				908DA3291E51BFD20064B5F9 /* DetailedViewController.m in Sources */,
 				908DA3601E51CEC10064B5F9 /* UIButton+Category.m in Sources */,

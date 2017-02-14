@@ -10,16 +10,7 @@
 
 @implementation JsonRWManager
 
-+ (void)forTest {
-    NSString *localPath = [NSHomeDirectory() stringByAppendingString:@"/test.json"];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"json"];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if([fileManager fileExistsAtPath:localPath]) {
-        [fileManager removeItemAtPath:localPath error:nil];
-    }
-    
-    [fileManager copyItemAtPath:path toPath:localPath error:NULL];
-}
+
 
 + (void)readJsonObjectsWithPath:(NSString *)aPath{
     NSString *path = aPath;

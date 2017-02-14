@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-
+#import "Header.h"
 
 @interface AppDelegate ()
 
@@ -18,10 +18,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [self forTest];
     return YES;
 }
 
+- (void)forTest {
+    NSString *localPath = [DOCUMENTPATH stringByAppendingString:@"ebs.json"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"ebs" ofType:@"json"];
+    if(path){
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        if([fileManager fileExistsAtPath:localPath]) {
+            [fileManager removeItemAtPath:localPath error:nil];
+        }
+        
+        [fileManager copyItemAtPath:path toPath:localPath error:NULL];
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

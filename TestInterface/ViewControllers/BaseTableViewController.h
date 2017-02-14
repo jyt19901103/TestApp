@@ -10,6 +10,4 @@
 
 @interface BaseTableViewController : UITableViewController
 
-- (UIButton *) rightBarButtonItem;
-
 @end
