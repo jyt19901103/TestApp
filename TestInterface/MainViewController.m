@@ -20,9 +20,9 @@
 @property (strong, nonatomic) NSMutableArray *dataSource;
 @property (strong, nonatomic) UserModel *restModel;
 
-    
+
 @property (copy, nonatomic) NSDictionary *requestHeader;
-@property (copy, nonatomic) NSDictionary *requestBody;
+@property (copy, nonatomic) NSMutableDictionary *requestBody;
 @property (copy, nonatomic) NSString *url;
 @property (copy, nonatomic) NSString *method;
 @property (copy, nonatomic) NSDictionary *result;
@@ -45,9 +45,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.title = @"测试rest接口";
-
+    
     self.navigationItem.backBarButtonItem =  [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"开始" style:UIBarButtonItemStylePlain target:self action:@selector(onBtmClick:)];
     
@@ -56,7 +56,7 @@
 - (void)createTableView
 {
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT -60)];
-
+    
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
@@ -86,7 +86,7 @@
 {
     DetailedViewController *dvc = [[DetailedViewController alloc]init];
     dvc.dataDict = [_dataSource[indexPath.row] result];
-        //推出vc
+    //推出vc
     [self.navigationController pushViewController:dvc animated:YES];
 }
 
@@ -94,7 +94,7 @@
     if (_dataSource != nil) {
         [_dataSource removeAllObjects];
     }
-//    [self requestData];
+    //    [self requestData];
     [self requestRestData];
     
 }
@@ -153,15 +153,23 @@
 }
 
 - (void)requestTokenData{
-
+    
+    NSString *client_id = _resultData[@"client_id"];
+    NSString *client_secret = _resultData[@"client_secret"];
+    
+    NSLog(@"%@1111111111111111%@",client_id,client_secret);
+    
     NSDictionary *tokenDict = _resultData[@"Token"];
     _restModel = [UserModel modelWithDict:tokenDict];
-
-    _url = [NSString stringWithFormat:@"%@%@",URLSTRING,_restModel.api];
-    NSLog(@"1111111111111111%@",_url);
     
+    _url = [NSString stringWithFormat:@"%@%@",URLSTRING,_restModel.api];
+    NSMutableDictionary *body = [NSMutableDictionary dictionary];
+    [body setValue:client_id forKey:@"client_id"];
+    [body setValue:client_secret forKey:@"client_secret"];
+    [body setValue:_restModel.body[@"grant_type"] forKey:@"grant_type"];
+    NSLog(@"_requestBody :%@",body);
     __weak typeof(self) weakSelf = self;
-    [HttpRequest httpOtherRequest:_url  RequestType:_restModel.method Header:_restModel.header Parameters:_restModel.body WithSuccess:^(id result) {
+    [HttpRequest httpOtherRequest:_url  RequestType:_restModel.method Header:_restModel.header Parameters:body WithSuccess:^(id result) {
         __strong MainViewController *strSelf = self;
         NSString *tokenString = [result objectForKey:@"access_token"];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -174,7 +182,7 @@
         
         dispatch_async([strSelf serialQueue], ^{//把block中的任务放入串行队列中执行，这是第一个任务
             [weakSelf requestUsersData:_resultData[@"Users"]];
-
+            
         });
         
         dispatch_async([strSelf serialQueue], ^{
@@ -190,7 +198,7 @@
             [weakSelf requestUsersData:_resultData[@"ChatRoom"]];
             
         });
-
+        
     } failure:^(NSError *error) {
         if (error) {
             NSLog(@"error:%@",error);
@@ -201,20 +209,20 @@
 }
 
 - (void)requestUsersData:(NSArray *)userArray{
-  //  dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-
+    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
     for (NSDictionary *dict in userArray) {
         UserModel *listModel = [UserModel modelWithDict:dict];
-
+        
         if ([listModel.name isEqualToString:@"根据时间条件拉取历史消息"]){
             NSString *str = [listModel.api stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             _url = [NSString stringWithFormat:@"%@%@",URLSTRING,str];
         }
-       else if ([listModel.api rangeOfString:@"%1$s"].location !=NSNotFound) {
+        else if ([listModel.api rangeOfString:@"%1$s"].location !=NSNotFound) {
             
             _url = [NSString stringWithFormat:@"%@%@",URLSTRING,[listModel.api stringByReplacingOccurrencesOfString:@"%1$s" withString:GroupId]];
         }
-       else if ([listModel.api rangeOfString:@"%2$s"].location !=NSNotFound) {
+        else if ([listModel.api rangeOfString:@"%2$s"].location !=NSNotFound) {
             
             _url = [NSString stringWithFormat:@"%@%@",URLSTRING,[listModel.api stringByReplacingOccurrencesOfString:@"%2$s" withString:ChatRoomId]];
         }
@@ -222,9 +230,10 @@
             _url = [NSString stringWithFormat:@"%@%@",URLSTRING,listModel.api];
         }
         NSLog(@"=============%@",_url);
-
+        
         if (listModel.body != nil) {
             _requestBody  = [dict objectForKey:@"body"];
+            
         }else{
             _requestBody = nil;
         }
@@ -235,9 +244,8 @@
             _requestHeader = nil;
         }
         
-//        dispatch_sync(concurrentQueue, ^{
-        //_url = [_url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        
+        dispatch_sync(concurrentQueue, ^{
+            
             [HttpRequest httpRequest:_url RequestType:listModel.method Header:_requestHeader Parameters:_requestBody WithSuccess:^(id result) {
                 listModel.result = result;
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -269,16 +277,16 @@
             } statusCode:^(NSInteger statusCode) {
                 listModel.staus = [NSString stringWithFormat:@"%ld", statusCode];
                 
-              //  dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.tableView reloadData];
-                    
-             //   });
+                //  dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+                
+                //   });
                 
             }];
             [_dataSource addObject:listModel];
             
-      //  });
-
+        });
+        
     }
     
     [self.tableView reloadData];
