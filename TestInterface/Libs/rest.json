@@ -1,6 +1,8 @@
 {
     "org_name": "shishijiadexiaoermei",
     "app_name": "testapp",
+    "client_id": "YXA6txSEEMEjEeaF0q9N7ahXSg",
+    "client_secret": "YXA64rDr7kIO6xl1vK_x4u2Bcwu8Iu8",
     "Dns": {
         "name": "获取DNS列表",
         "api": "https://rs.easemob.com/easemob/server.json?app_key=easemob-demo%23chatdemoui",
