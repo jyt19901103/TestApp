@@ -1,8 +1,7 @@
 {
     "org_name": "shishijiadexiaoermei",
     "app_name": "testapp",
-    "rest_url": "https://a1.easemob.com/",
-    "DNS": {
+    "Dns": {
         "name": "获取DNS列表",
         "api": "https://rs.easemob.com/easemob/server.json?app_key=easemob-demo%23chatdemoui",
         "method": "GET"
@@ -48,7 +47,7 @@
                        "nickname": "测试账户2"
                        },
                        {
-                       "username": "u1",
+                       "username": "u3",
                        "password": "1",
                        "nickname": "测试账户3"
                        },
@@ -172,7 +171,7 @@
               "method": "POST"
               },
               {
-              "name": "用户账号禁用",
+              "name": "用户账号解禁",
               "api": "user/u5/activate",
               "method": "POST"
               },
@@ -180,138 +179,6 @@
               "name": "强制用户下线",
               "api": "user/u5/disconnect",
               "method": "GET"
-              },
-              {
-              "name": "发送文本消息",
-              "api": "messages",
-              "method": "POST",
-              "body": {
-              "target_type": "users",
-              "target": [
-                         "mcs1",
-                         "mcs2"
-                         ],
-              "msg": {
-              "type": "txt",
-              "msg": "message from rest"
-              },
-              "from": "rest"
-              }
-              },
-              {
-              "name": "发送CMD消息",
-              "api": "messages",
-              "method": "POST",
-              "body": {
-              "target_type": "users",
-              "target": [
-                         "b1",
-                         "22"
-                         ],
-              "msg": {
-              "type": "cmd",
-              "action": "action1"
-              },
-              "from": "rest"
-              }
-              },
-              {
-              "name": "发送扩展消息",
-              "api": "messages",
-              "method": "POST",
-              "body": {
-              "target_type": "users",
-              "target": [
-                         "testb",
-                         "testc"
-                         ],
-              "msg": {
-              "type": "txt",
-              "msg": "消息"
-              },
-              "from": "testa",
-              "ext": {
-              "attr1": "v1"
-              }
-              }
-              },
-              {
-              "name": "获取用户的历史消息",
-              "api": "chatmessages?ql=select+*+where+to='u3'",
-              "method": "GET"
-              },
-              {
-              "name": "根据时间条件下载历史消息",
-              "api": "chatmessages/20170111715",
-              "method": "GET"
-              },
-              {
-              "name": "发送图片消息",
-              "api": "messages",
-              "method": "POST",
-              "body": {
-              "target_type": "users",
-              "target": [
-                         "u4",
-                         "u6"
-                         ],
-              "msg": {
-              "type": "img",
-              "url": "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/c8ae5ad0-a5a7-11e6-b991-65e029430485",
-              "filename": "lorex.jpg",
-              "secret": "yK5a2qWnEeaRcJUaVNstNOVVTjuqBVyib-rF7Vw1xSVn28X4",
-              "size": {
-              "width": 480,
-              "height": 480
-              }
-              },
-              "from": "u3"
-              }
-              },
-              {
-              "name": "发送语音消息",
-              "api": "messages",
-              "method": "POST",
-              "body": {
-              "target_type": "users",
-              "target": [
-                         "u4",
-                         "u6"
-                         ],
-              "msg": {
-              "type": "audio",
-              "url": "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/76635950-a5a8-11e6-9387-3f2d3a91e533",
-              "filename": "audio sample.amr",
-              "secret": "dmNZWqWoEeaDymsQPaQ9I3Wcs05uXfMWGn0KuRdR87wqko70",
-              "size": {
-              "width": 480,
-              "height": 480
-              }
-              },
-              "from": "u3"
-              }
-              },
-              {
-              "name": "发送视频消息",
-              "api": "messages",
-              "method": "POST",
-              "body": {
-              "target_type": "users",
-              "target": [
-                         "u4"
-                         ],
-              "msg": {
-              "type": "video",
-              "url": "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/9887d140-a649-11e6-b383-4541f7075ce8",
-              "filename": "111.mp4",
-              "length": 5,
-              "secret": "mIfRSqZJEeaei5tHtLW4f-e_Zh4N_-DOwtX4nFIOvUitGtHJ",
-              "thumb": "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/f6a5a3a0-a64a-11e6-8a7b-51138be95708",
-              "thumb_secret": "9qWjqqZKEeaeHwuBpYinrXmDsuAtOTQ2Ad8JW34Gtdj5XrnD",
-              "file_length": 8699
-              },
-              "from": "u3"
-              }
               },
               {
               "name": "上传语音/图片文件",
@@ -324,186 +191,7 @@
               "body": {
               "file": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties"
               }
-              },
-              {
-              "name": "获取所有群组",
-              "api": "chatgroups",
-              "method": "GET"
-              },
-              {
-              "name": "分页获取 APP 下的群组",
-              "api": "chatgroups?limit=10",
-              "method": "GET"
-              },
-              {
-              "name": "获取群组详情",
-              "api": "chatgroups/287443699032392204",
-              "method": "GET"
-              },
-              {
-              "name": "创建一个Public群组",
-              "api": "chatgroups",
-              "method": "POST",
-              "body": {
-              "groupname": "这是一个公共群组",
-              "desc": "RST created group",
-              "public": true,
-              "allowinvites": false,
-              "maxusers": 800,
-              "approval": true,
-              "owner": "u3",
-              "members": [
-                          "b1"
-                          ]
-              }
-              },
-              {
-              "name": "创建一个Private群组",
-              "api": "chatgroups",
-              "method": "POST",
-              "body": {
-              "groupname": "这是一个公共群组No.2",
-              "desc": "RST created group",
-              "public": false,
-              "allowinvites": false,
-              "maxusers": 500,
-              "approval": true,
-              "owner": "u3",
-              "members": [
-                          "b1",
-                          "u6"
-                          ]
-              }
-              },
-              {
-              "name": "修改群组信息",
-              "api": "chatgroups/287443699032392204",
-              "method": "PUT",
-              "body": {
-              "groupname": "test rest group",
-              "description": "updategroupinfo",
-              "maxusers": 300
-              }
-              },
-              {
-              "name": "添加群组成员[单个]",
-              "api": "chatgroups/287443699032392204/users/u7",
-              "method": "POST"
-              },
-              {
-              "name": "获取群组所有成员",
-              "api": "chatgroups/287443699032392204/users",
-              "method": "GET"
-              },
-              {
-              "name": "获取一个用户的所有群组",
-              "api": "users/u3/joined_chatgroups",
-              "method": "GET"
-              },
-              {
-              "name": "添加用户至群组黑名单[单个]",
-              "api": "chatgroups/287443699032392204/blocks/users/u8",
-              "method": "POST"
-              },
-              {
-              "name": "查询群组黑名单",
-              "api": "chatgroups/287443699032392204/blocks/users",
-              "method": "GET"
-              },
-
-
-              {
-              "name": "转让群组",
-              "api": "chatgroups/287443699032392204",
-              "method": "PUT",
-              "body": {
-              "newowner": "u4"
-              }
-              },
-              {
-              "name": "创建聊天室",
-              "api": "chatrooms",
-              "method": "POST",
-              "body": {
-              "name": "test chatroom",
-              "description": "chatroom description",
-              "maxusers": 5000,
-              "owner": "u3"
-              }
-              },
-              {
-              "name": "获取APP下所有聊天室",
-              "api": "chatrooms",
-              "method": "GET"
-              },
-              {
-              "name": "获取一个聊天室详情",
-              "api": "chatrooms/287658073487573528",
-              "method": "GET"
-              },
-              {
-              "name": "修改聊天室信息",
-              "api": "chatrooms/287658073487573528",
-              "method": "PUT",
-              "body": {
-              "name": "修改聊天室信息啊m",
-              "description": "chatroom description",
-              "maxusers": 1000
-              }
-              },
-              {
-              "name": "获取用户加入的聊天室",
-              "api": "users/u3/joined_chatrooms",
-              "method": "GET"
-              },
-              {
-              "name": "添加聊天室成员[单个]",
-              "api": "chatrooms/287658073487573528/users/u4",
-              "method": "POST"
-              },
-              {
-              "name": "添加聊天室成员[批量]",
-              "api": "chatrooms/287658073487573528/users",
-              "method": "POST",
-              "body": {
-              "usernames": [
-                            "u6",
-                            "u7",
-                            "u8",
-                            
-                            ]
-              }
-              },
-
-              {
-              "name": "删除聊天室",
-              "api": "chatrooms/287366903997923868",
-              "method": "DELETE"
-              },
-              {
-              "name": "发聊天室消息",
-              "api": "messages",
-              "method": "POST",
-              "body": {
-              "target_type": "chatrooms",
-              "target": [
-                         "287658073487573528"
-                         ],
-              "msg": {
-              "type": "txt",
-              "msg": "message from rest"
-              },
-              "from": "rest"
-              }
-              },
-              {
-              "name": "根据时间条件拉取历史消息",
-              "api": "chatmessages?ql=select+*+where+timestamp>1478354461757",
-              "method": "GET"
-              }
-              ],
-    "After": [
-              {
+              },              {
               "name": "解除 IM 用户的好友关系",
               "api": "users/u3/contacts/users/u6",
               "method": "DELETE"
@@ -517,21 +205,329 @@
               "name": "删除用户",
               "api": "user/test1",
               "method": "DELETE"
-              },
-              {
-              "name": "移除群组成员[单个]",
-              "api": "chatgroups/287443699032392204/users/u7",
-              "method": "DELETE"
-              },
-              {
-              "name": "从群组黑名单移除用户[单个]",
-              "api": "chatgroups/287443699032392204/blocks/users/u8",
-              "method": "DELETE"
-              },
-              {
-              "name": "删除聊天室成员[单个]",
-              "api": "chatrooms/287658073487573528/users/u4",
-              "method": "DELETE"
               }
-              ]
+              ],
+    "Chat": [
+             {
+             "name": "发送CMD消息",
+             "api": "messages",
+             "method": "POST",
+             "body": {
+             "target_type": "users",
+             "target": [
+                        "b1",
+                        "22"
+                        ],
+             "msg": {
+             "type": "cmd",
+             "action": "action1"
+             },
+             "from": "rest"
+             }
+             },
+             {
+             "name": "发送扩展消息",
+             "api": "messages",
+             "method": "POST",
+             "body": {
+             "target_type": "users",
+             "target": [
+                        "testb",
+                        "testc"
+                        ],
+             "msg": {
+             "type": "txt",
+             "msg": "消息"
+             },
+             "from": "testa",
+             "ext": {
+             "attr1": "v1"
+             }
+             }
+             },
+             {
+             "name": "获取用户的历史消息",
+             "api": "chatmessages?ql=select+*+where+to='u3'",
+             "method": "GET"
+             },
+             {
+             "name": "根据时间条件下载历史消息",
+             "api": "chatmessages/20170111715",
+             "method": "GET"
+             },
+             {
+             "name": "根据时间条件拉取历史消息",
+             "api": "chatmessages?ql=select+*+where+timestamp>1478354461757",
+             "method": "GET"
+             },
+             {
+             "name": "发送文本消息",
+             "api": "messages",
+             "method": "POST",
+             "body": {
+             "target_type": "users",
+             "target": [
+                        "mcs1",
+                        "mcs2"
+                        ],
+             "msg": {
+             "type": "txt",
+             "msg": "message from rest"
+             },
+             "from": "rest"
+             },
+             
+             },
+             {
+             "name": "发送图片消息",
+             "api": "messages",
+             "method": "POST",
+             "body": {
+             "target_type": "users",
+             "target": [
+                        "u4",
+                        "u6"
+                        ],
+             "msg": {
+             "type": "img",
+             "url": "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/c8ae5ad0-a5a7-11e6-b991-65e029430485",
+             "filename": "lorex.jpg",
+             "secret": "yK5a2qWnEeaRcJUaVNstNOVVTjuqBVyib-rF7Vw1xSVn28X4",
+             "size": {
+             "width": 480,
+             "height": 480
+             }
+             },
+             "from": "u3"
+             }
+             },
+             {
+             "name": "发送语音消息",
+             "api": "messages",
+             "method": "POST",
+             "body": {
+             "target_type": "users",
+             "target": [
+                        "u4",
+                        "u6"
+                        ],
+             "msg": {
+             "type": "audio",
+             "url": "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/76635950-a5a8-11e6-9387-3f2d3a91e533",
+             "filename": "audio sample.amr",
+             "secret": "dmNZWqWoEeaDymsQPaQ9I3Wcs05uXfMWGn0KuRdR87wqko70",
+             "size": {
+             "width": 480,
+             "height": 480
+             }
+             },
+             "from": "u3"
+             }
+             },
+             {
+             "name": "发送视频消息",
+             "api": "messages",
+             "method": "POST",
+             "body": {
+             "target_type": "users",
+             "target": [
+                        "u4"
+                        ],
+             "msg": {
+             "type": "video",
+             "url": "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/9887d140-a649-11e6-b383-4541f7075ce8",
+             "filename": "111.mp4",
+             "length": 5,
+             "secret": "mIfRSqZJEeaei5tHtLW4f-e_Zh4N_-DOwtX4nFIOvUitGtHJ",
+             "thumb": "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/f6a5a3a0-a64a-11e6-8a7b-51138be95708",
+             "thumb_secret": "9qWjqqZKEeaeHwuBpYinrXmDsuAtOTQ2Ad8JW34Gtdj5XrnD",
+             "file_length": 8699
+             },
+             "from": "u3"
+             }
+             }
+             ],
+    "ChatGroup": [
+                  {
+                  "name": "创建一个Public群组",
+                  "api": "chatgroups",
+                  "method": "POST",
+                  "body": {
+                  "groupname": "这是一个公共群组",
+                  "desc": "RST created group",
+                  "public": true,
+                  "allowinvites": false,
+                  "maxusers": 800,
+                  "approval": true,
+                  "owner": "u3",
+                  "members": [
+                              "u2",
+                              "u4",
+                              "u6",
+                              "u8"
+                              ]
+                  }
+                  },
+                  {
+                  "name": "获取所有群组",
+                  "api": "chatgroups",
+                  "method": "GET"
+                  },
+                  {
+                  "name": "分页获取 APP 下的群组",
+                  "api": "chatgroups?limit=10",
+                  "method": "GET"
+                  } ,
+                  {
+                  "name": "获取群组详情",
+                  "api": "chatgroups/%1$s",
+                  "method": "GET"
+                  },
+
+
+                  {
+                  "name": "修改群组信息",
+                  "api": "chatgroups/%1$s",
+                  "method": "PUT",
+                  "body": {
+                  "groupname": "test rest group",
+                  "description": "updategroupinfo",
+                  "maxusers": 300
+                  }
+                  },
+                  {
+                  "name": "添加群组成员[单个]",
+                  "api": "chatgroups/%1$s/users/u7",
+                  "method": "POST"
+                  },
+                  {
+                  "name": "获取群组所有成员",
+                  "api": "chatgroups/%1$s/users",
+                  "method": "GET"
+                  },
+                  {
+                  "name": "获取一个用户的所有群组",
+                  "api": "users/u3/joined_chatgroups",
+                  "method": "GET"
+                  },
+                  {
+                  "name": "添加用户至群组黑名单[单个]",
+                  "api": "chatgroups/%1$s/blocks/users/u8",
+                  "method": "POST"
+                  },
+                  {
+                  "name": "查询群组黑名单",
+                  "api": "chatgroups/%1$s/blocks/users",
+                  "method": "GET"
+                  },
+                  {
+                  "name": "移除群组成员[单个]",
+                  "api": "chatgroups/%1$s/users/u7",
+                  "method": "DELETE"
+                  },
+                  {
+                  "name": "从群组黑名单移除用户[单个]",
+                  "api": "chatgroups/%1$s/blocks/users/u8",
+                  "method": "DELETE"
+                  },
+                  {
+                  "name": "转让群组",
+                  "api": "chatgroups/%1$s",
+                  "method": "PUT",
+                  "body": {
+                  "newowner": "u2"
+                  }},
+                  {
+                  "name": "删除群组",
+                  "api": "chatgroups/%1$s",
+                  "method": "DELETE"
+                  }
+                  
+
+                  ],
+    "ChatRoom": [
+                 {
+                 "name": "创建聊天室",
+                 "api": "chatrooms",
+                 "method": "POST",
+                 "body": {
+                 "name": "test chatroom",
+                 "description": "chatroom description",
+                 "maxusers": 5000,
+                 "owner": "u3",
+                 "members":["u4","u6"]
+                 }
+                 },
+                 {
+                 "name": "获取APP下所有聊天室",
+                 "api": "chatrooms",
+                 "method": "GET"
+                 }    ,
+                 {
+                 "name": "获取一个聊天室详情",
+                 "api": "chatrooms/%2$s",
+                 "method": "GET"
+                 },
+                 {
+                 "name": "修改聊天室信息",
+                 "api": "chatrooms/%2$s",
+                 "method": "PUT",
+                 "body": {
+                 "name": "修改聊天室信息啊m",
+                 "description": "chatroom description",
+                 "maxusers": 1000
+                 }
+                 },
+                 {
+                 "name": "获取用户加入的聊天室",
+                 "api": "users/u3/joined_chatrooms",
+                 "method": "GET"
+                 },
+                 {
+                 "name": "添加聊天室成员[单个]",
+                 "api": "chatrooms/%2$s/users/u4",
+                 "method": "POST"
+                 },
+                 {
+                 "name": "添加聊天室成员[批量]",
+                 "api": "chatrooms/%2$s/users",
+                 "method": "POST",
+                 "body": {
+                 "usernames": [
+                               "u6",
+                               "u7",
+                               "u8",
+                               
+                               ]
+                 }
+                 },
+                 {
+                 "name": "发聊天室消息",
+                 "api": "messages",
+                 "method": "POST",
+                 "body": {
+                 "target_type": "chatrooms",
+                 "target": [
+                            "287658073487573528"
+                            ],
+                 "msg": {
+                 "type": "txt",
+                 "msg": "message from rest"
+                 },
+                 "from": "rest"
+                 }
+                 },
+                 {
+                 "name": "删除聊天室成员[单个]",
+                 "api": "chatrooms/%2$s/users/u4",
+                 "method": "DELETE"
+                 },
+                 {
+                 "name": "删除聊天室",
+                 "api": "chatrooms/%2$s",
+                 "method": "DELETE"
+                 }
+
+                 ]
+
 }

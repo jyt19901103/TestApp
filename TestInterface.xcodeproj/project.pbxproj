@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		443AA186A09B4C39246B9C44 /* libPods-TestInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9136EE11CA41D8D175C75993 /* libPods-TestInterface.a */; };
-		DE1C11BB1E273C5F00D8E393 /* Untitled.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11BA1E273C5E00D8E393 /* Untitled.json */; };
 		DE1C11C41E2CA56800D8E393 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C31E2CA56800D8E393 /* DetailedViewController.m */; };
 		DE3CEEE11E34C7D90048BB86 /* rest.json in Resources */ = {isa = PBXBuildFile; fileRef = DE3CEEE01E34C7D90048BB86 /* rest.json */; };
 		DE67B6ED1E1E262D0071161F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67B6EC1E1E262D0071161F /* main.m */; };
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		9136EE11CA41D8D175C75993 /* libPods-TestInterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestInterface.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71EE3BDEC3CD6248AB7B94E /* Pods-TestInterface.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestInterface.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestInterface/Pods-TestInterface.debug.xcconfig"; sourceTree = "<group>"; };
-		DE1C11BA1E273C5E00D8E393 /* Untitled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Untitled.json; path = ../../Untitled.json; sourceTree = "<group>"; };
 		DE1C11C21E2CA56800D8E393 /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailedViewController.h; path = ../Chat/DetailedViewController.h; sourceTree = "<group>"; };
 		DE1C11C31E2CA56800D8E393 /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailedViewController.m; path = ../Chat/DetailedViewController.m; sourceTree = "<group>"; };
 		DE3CEEE01E34C7D90048BB86 /* rest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rest.json; sourceTree = "<group>"; };
@@ -40,8 +38,8 @@
 		DE67B6F71E1E262D0071161F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE67B6FA1E1E262D0071161F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE67B6FC1E1E262D0071161F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE67B70E1E1E26900071161F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
-		DE67B70F1E1E26900071161F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
+		DE67B70E1E1E26900071161F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		DE67B70F1E1E26900071161F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		DE67B7381E1E28810071161F /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		DE67B7391E1E28A60071161F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DE67B7861E2487060071161F /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
@@ -106,6 +104,8 @@
 		DE67B6EA1E1E262D0071161F /* TestInterface */ = {
 			isa = PBXGroup;
 			children = (
+				DE67B70E1E1E26900071161F /* MainViewController.h */,
+				DE67B70F1E1E26900071161F /* MainViewController.m */,
 				DE67B6EE1E1E262D0071161F /* AppDelegate.h */,
 				DE67B6EF1E1E262D0071161F /* AppDelegate.m */,
 				DE67B6F11E1E262D0071161F /* ViewController.h */,
@@ -138,8 +138,6 @@
 				DE7CEC9C1E249531007ABB4A /* UserModel.m */,
 				DEBB2AFD1E24D8AB00EC7391 /* ListCell.h */,
 				DEBB2AFE1E24D8AB00EC7391 /* ListCell.m */,
-				DE67B70E1E1E26900071161F /* MainViewController.h */,
-				DE67B70F1E1E26900071161F /* MainViewController.m */,
 			);
 			name = BuddyList;
 			path = TestInterface/BuddyList;
@@ -159,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				DE3CEEE01E34C7D90048BB86 /* rest.json */,
-				DE1C11BA1E273C5E00D8E393 /* Untitled.json */,
 			);
 			name = Libs;
 			path = TestInterface/Libs;
@@ -229,7 +226,6 @@
 			files = (
 				DE67B6FB1E1E262D0071161F /* LaunchScreen.storyboard in Resources */,
 				DE67B6F81E1E262D0071161F /* Assets.xcassets in Resources */,
-				DE1C11BB1E273C5F00D8E393 /* Untitled.json in Resources */,
 				DE67B6F61E1E262D0071161F /* Main.storyboard in Resources */,
 				DE3CEEE11E34C7D90048BB86 /* rest.json in Resources */,
 			);
@@ -280,7 +276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

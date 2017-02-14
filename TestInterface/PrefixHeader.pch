@@ -21,4 +21,7 @@
 #define URLSTRING [[NSUserDefaults standardUserDefaults] objectForKey:@"URLSTRING"]
 
 
+#define GroupId [[NSUserDefaults standardUserDefaults] objectForKey:@"GroupId"]
+#define ChatRoomId [[NSUserDefaults standardUserDefaults] objectForKey:@"ChatRoomId"]
+
 #endif
