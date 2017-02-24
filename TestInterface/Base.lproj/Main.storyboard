@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--EMTool-->
         <scene sceneID="LT0-qo-sI5">
             <objects>
                 <tableViewController id="ntm-Lw-3iM" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                             <outlet property="delegate" destination="ntm-Lw-3iM" id="BCn-sI-pe8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="SeM-Ap-h8v"/>
+                    <navigationItem key="navigationItem" title="EMTool" id="SeM-Ap-h8v"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rtj-Xe-sic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,10 +96,58 @@
                             <outlet property="delegate" destination="uFv-m3-nnr" id="pXf-oS-RD6"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="P5b-bI-fUW">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qc7-Iu-nGu">
+                            <rect key="frame" x="113" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                            <state key="normal" title="请选择Json文件"/>
+                            <connections>
+                                <segue destination="TDW-Ia-w1X" kind="showDetail" id="6hE-rI-p1x"/>
+                            </connections>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" title="开始" id="1hF-np-dCa"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9a-ej-ciW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2078" y="87"/>
+        </scene>
+        <!--本地Json文件-->
+        <scene sceneID="Z3w-LD-7ui">
+            <objects>
+                <tableViewController id="7nu-KM-pEj" customClass="JsonSelectViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IrK-WV-Ti6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iSz-J6-Um3">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iSz-J6-Um3" id="sQn-UJ-Nvi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7nu-KM-pEj" id="XWh-0p-oSd"/>
+                            <outlet property="delegate" destination="7nu-KM-pEj" id="Qxs-eI-E4o"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="本地Json文件" id="e0D-pl-WV1">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="3uR-6E-BSK">
+                            <connections>
+                                <action selector="backAction:" destination="7nu-KM-pEj" id="khQ-8Q-kID"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qks-tF-iBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3876" y="86.806596701649184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m5Z-fY-hHR">
@@ -122,7 +170,7 @@
         <!--Tools-->
         <scene sceneID="dju-ET-trt">
             <objects>
-                <tableViewController title="Tools" id="Gwv-y5-fxB" sceneMemberID="viewController">
+                <tableViewController title="Tools" id="Gwv-y5-fxB" customClass="ToolsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mVg-is-6zR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,6 +194,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Fi-B5-Uhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1033" y="805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4I1-lw-sqJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TDW-Ia-w1X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zsd-Vp-IP1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7nu-KM-pEj" kind="relationship" relationship="rootViewController" id="tTm-gB-2DO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ep1-2f-z2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2936.8000000000002" y="86.806596701649184"/>
         </scene>
     </scenes>
 </document>

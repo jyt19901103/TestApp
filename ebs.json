@@ -1,11 +1,13 @@
 {
+    "base_url": "https://a1.easemob.com/",
     "org_name": "shishijiadexiaoermei",
     "app_name": "testapp",
-    "rest_url": "https://a1.easemob.com/",
+    "client_id": "YXA6txSEEMEjEeaF0q9N7ahXSg",
+    "client_secret": "YXA64rDr7kIO6xl1vK_x4u2Bcwu8Iu8",
     "Token": [
               {
               "name": "获取DNS列表",
-              "api": "https://rs.easemob.com/easemob/server.json?app_key=easemob-demo%23chatdemoui",
+              "api": "https://rs.easemob.com/easemob/server.json?app_key={$org_name$}%23{$app_name$}",
               "method": "GET"
               },
               {
@@ -16,9 +18,7 @@
               "Content-Type": "application/json"
               },
               "body": {
-              "grant_type": "client_credentials",
-              "client_id": "YXA6txSEEMEjEeaF0q9N7ahXSg",
-              "client_secret": "YXA64rDr7kIO6xl1vK_x4u2Bcwu8Iu8"
+              "grant_type": "client_credentials"
               }
               },{
               "name": "注册用户",

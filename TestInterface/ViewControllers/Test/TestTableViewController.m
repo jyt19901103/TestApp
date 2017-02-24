@@ -7,6 +7,7 @@
 //
 
 #import "TestTableViewController.h"
+#import "JsonSelectViewController.h"
 #import "Header.h"
 
 @interface TestTableViewController ()
@@ -25,17 +26,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIButton *)rightBarButtonItem {
-    UIButton *ret = [UIButton btnWithTitle:@"开始"
-                                     color:[UIColor blackColor]
-                                  forState:UIControlStateNormal
-                                    target:self
-                                    action:@selector(action)];
-    return ret;
-}
-
-- (void)action {
-    
-}
 
 @end
